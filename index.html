@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Konsultasi Treatment Rambut — Qeza</title>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '919650077514693');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=919650077514693&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<style>
+  :root{
+    --orange:#fa6400;
+    --orange-dark:#c94f00;
+    --cream:#FEF3E2;
+    --gold:#FAB12F;
+    --ink:#2b1d12;
+    --ink-soft:#6b5a48;
+    --line:#ecdcc4;
+    --white:#fffdf9;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Georgia','Iowan Old Style',serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.5;
+  }
+  .wrap{
+    max-width:640px;
+    margin:0 auto;
+    padding:32px 20px 80px;
+  }
+  header{
+    text-align:left;
+    margin-bottom:28px;
+    border-bottom:2px solid var(--orange);
+    padding-bottom:18px;
+  }
+  header .kicker{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:13px;
+    color:var(--orange-dark);
+    letter-spacing:0.02em;
+    margin-bottom:6px;
+  }
+  header h1{
+    font-size:26px;
+    margin:0 0 8px;
+    line-height:1.25;
+  }
+  header p{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    color:var(--ink-soft);
+    font-size:14.5px;
+    margin:0;
+  }
+  .promo-box{
+    background:linear-gradient(135deg,var(--gold) 0%, var(--orange) 100%);
+    color:var(--white);
+    border-radius:10px;
+    padding:14px 18px;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:14px;
+    margin-bottom:28px;
+  }
+  .promo-box b{display:block;font-size:15px;margin-bottom:3px;}
+
+  .card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:22px 22px 20px;
+    margin-bottom:16px;
+  }
+  .card h2{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:12.5px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--orange-dark);
+    margin:0 0 4px;
+  }
+  .card .q{
+    font-size:17px;
+    margin:0 0 14px;
+  }
+  .options{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .opt{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:11px 14px;
+    cursor:pointer;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:14.5px;
+    transition:border-color .15s, background .15s;
+  }
+  .opt:hover{border-color:var(--orange);}
+  .opt.selected{
+    border-color:var(--orange);
+    background:#fff6ec;
+  }
+  .opt input{accent-color:var(--orange);}
+  textarea{
+    width:100%;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:14.5px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:11px 14px;
+    resize:vertical;
+    min-height:70px;
+  }
+  .btn{
+    display:block;
+    width:100%;
+    background:var(--orange);
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    padding:15px;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:15.5px;
+    font-weight:600;
+    cursor:pointer;
+    margin-top:8px;
+  }
+  .btn:disabled{background:#e0c9ab;cursor:not-allowed;}
+  .btn:hover:not(:disabled){background:var(--orange-dark);}
+
+  .result{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-left:4px solid var(--orange);
+    border-radius:10px;
+    padding:22px;
+    margin-top:8px;
+    font-size:15.5px;
+  }
+  .result h3{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    color:var(--orange-dark);
+    margin:0 0 12px;
+  }
+  .result p{margin:0 0 12px;}
+  .result p:last-child{margin-bottom:0;}
+  .rec-name{
+    font-size:20px;
+    font-weight:700;
+    color:var(--orange-dark);
+    margin-bottom:2px;
+  }
+  .rec-price{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:14px;
+    color:var(--ink-soft);
+    margin-bottom:14px;
+  }
+  .price-strike{
+    text-decoration:line-through;
+    opacity:0.6;
+  }
+  .price-promo{
+    color:var(--orange-dark);
+    font-weight:700;
+  }
+  .loading{
+    text-align:center;
+    padding:30px;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    color:var(--ink-soft);
+    font-size:14px;
+  }
+  .wa-btn{
+    display:block;
+    text-align:center;
+    background:#25D366;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    padding:15px;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-weight:600;
+    font-size:15.5px;
+    margin-top:16px;
+  }
+  .wa-btn:hover{background:#1ebc59;}
+  .wa-btn-secondary{
+    background:var(--white);
+    color:var(--orange-dark);
+    border:1.5px solid var(--orange);
+    margin-top:10px;
+  }
+  .wa-btn-secondary:hover{background:#fff6ec;}
+  .hidden{display:none;}
+  .progress{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-bottom:8px;
+  }
+  .error{
+    color:#b91c1c;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:14px;
+    text-align:center;
+    padding:20px;
+  }
+  .validation-msg{
+    color:#b91c1c;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:13px;
+    margin-top:8px;
+  }
+  .char-count{
+    text-align:right;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-top:4px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="kicker">QEZA AESTHETIC CLINIC</div>
+    <h1>Konsultasi Treatment Rambut Qeza</h1>
+    <p>Jawab beberapa pertanyaan singkat, dan dapatkan estimasi awal treatment yang paling sesuai dari 4 pilihan treatment rambut Qeza — treatment final tetap dikonfirmasi oleh CS dan dokter lewat hair analysis di klinik.</p>
+  </header>
+
+  <div id="formArea"></div>
+
+  <div id="loadingArea" class="loading hidden">Sedang menyiapkan penjelasan untuk kamu...</div>
+
+  <div id="resultArea" class="hidden"></div>
+
+</div>
+
+<script>
+// -----------------------------------------------------------------
+// PENTING: nomor WhatsApp CS Qeza
+// -----------------------------------------------------------------
+const WA_NUMBER = "6282327610034";
+
+// -----------------------------------------------------------------
+// Promo HANYA berlaku untuk Hair Booster Therapy + PDT. Kalau rekomendasi jatuh
+// ke treatment lain, promo tidak ditampilkan/disebut — harga treatment lain
+// pakai harga normal dari PRODUCT_KNOWLEDGE di api/consult.js.
+// EDIT DI DUA TEMPAT setiap ada promo baru: di sini dan di api/consult.js.
+// Promo berlaku untuk SEMUA 4 treatment (harga promo sudah tersimpan di
+// TREATMENTS.promoPrice di atas). Edit harga di objek TREATMENTS itu saja
+// setiap ada perubahan promo — dan pastikan sinkron dengan PRODUCT_KNOWLEDGE
+// di api/consult.js.
+
+let answers = {
+  durasi: null,
+  kondisi: null,
+  keluhanUtama: [],
+  tingkatKerontokan: null,
+  preferensiMetode: null,
+  preferensiTingkat: null,
+  keraguan: [],
+  waktu: null,
+  pertanyaanBebas: ""
+};
+
+const steps = [
+  {
+    key: "durasi",
+    title: "Bagian 1 dari 5",
+    q: "Sudah berapa lama kamu mengalami masalah rambut ini?",
+    type: "single",
+    options: ["Baru mulai terasa (kurang dari 1 bulan)", "Beberapa bulan terakhir", "Lebih dari setahun"]
+  },
+  {
+    key: "keluhanUtama",
+    title: "Bagian 1 dari 5",
+    q: "Apa saja keluhan utama rambut/kulit kepalamu saat ini? (boleh pilih lebih dari satu)",
+    type: "multi",
+    options: [
+      "Rambut rontok, lebih dari biasanya",
+      "Pertumbuhan rambut baru terasa lambat/tidak ada",
+      "Rambut tipis dan lemas secara keseluruhan",
+      "Kulit kepala kurang sehat (kering, berminyak, atau gatal)"
+    ]
+  },
+  {
+    key: "tingkatKerontokan",
+    title: "Bagian 1 dari 5",
+    q: "Seberapa sering kamu melihat rambut rontok (misalnya di sisir, bantal, atau saat keramas)?",
+    type: "single",
+    options: ["Jarang, tidak terlalu terasa", "Cukup sering, mulai mengganggu", "Sangat sering, sudah terlihat jelas menipis"]
+  },
+  {
+    key: "kondisi",
+    title: "Bagian 2 dari 5",
+    q: "Kalau diraba di area yang bermasalah, kondisinya seperti apa?",
+    type: "single",
+    options: [
+      "Benar-benar tidak ada rambut/rambut halus sama sekali di area itu",
+      "Ada rambut halus tipis (seperti baby hair) tapi mudah patah/rontok",
+      "Tidak yakin, susah membedakan sendiri"
+    ]
+  },
+  {
+    key: "preferensiMetode",
+    title: "Bagian 3 dari 5",
+    q: "Beberapa treatment kami menggunakan plasma darah kamu sendiri (PRP), sebagian pakai serum topikal tanpa pengambilan darah. Kamu lebih nyaman yang mana?",
+    type: "single",
+    options: ["Tidak masalah dengan pengambilan darah (PRP)", "Lebih nyaman pakai serum topikal, tanpa darah", "Belum tahu, ikut saran"]
+  },
+  {
+    key: "preferensiTingkat",
+    title: "Bagian 3 dari 5",
+    q: "Kamu lebih tertarik treatment yang ringkas (±60 menit) atau pengalaman lebih lengkap (±60-90 menit dengan head massage & scalp detox)?",
+    type: "single",
+    options: ["Yang ringkas dan praktis", "Yang lebih lengkap, sekalian relaksasi", "Belum tahu, ikut saran sesuai budget"]
+  },
+  {
+    key: "keraguan",
+    title: "Bagian 4 dari 5",
+    q: "Apa yang bikin kamu masih ragu untuk mencoba treatment ini? (boleh pilih lebih dari satu)",
+    type: "multi",
+    options: ["Takut sakit/nyeri saat treatment", "Takut hasilnya tidak sesuai ekspektasi", "Belum tahu prosesnya seperti apa", "Masalah harga/budget", "Belum yakin ini cocok untuk kondisi rambutku"]
+  },
+  {
+    key: "waktu",
+    title: "Bagian 5 dari 5",
+    q: "Kamu berencana treatment ini untuk kapan?",
+    type: "single",
+    options: ["Secepatnya, minggu ini", "Dalam bulan ini", "Masih cari informasi dulu"]
+  },
+  {
+    key: "pertanyaanBebas",
+    title: "Bagian 5 dari 5",
+    q: "Ada pertanyaan spesifik lain yang mau kamu tanyakan? (opsional)",
+    type: "text"
+  }
+];
+
+let currentStep = 0;
+
+function renderStep(){
+  const area = document.getElementById('formArea');
+  const step = steps[currentStep];
+  let html = `<div class="card">
+    <div class="progress">${step.title}</div>
+    <h2>Pertanyaan ${currentStep+1} / ${steps.length}</h2>
+    <p class="q">${step.q}</p>`;
+
+  if(step.type === "single"){
+    html += '<div class="options">';
+    step.options.forEach((opt)=>{
+      const selected = answers[step.key] === opt ? 'selected' : '';
+      html += `<label class="opt ${selected}" data-key="${step.key}" data-value="${escapeHtml(opt)}" data-type="single">
+        <input type="radio" name="${step.key}" ${answers[step.key]===opt?'checked':''}/> ${opt}
+      </label>`;
+    });
+    html += '</div>';
+  } else if(step.type === "multi"){
+    html += '<div class="options">';
+    step.options.forEach((opt)=>{
+      const selected = answers[step.key].includes(opt) ? 'selected' : '';
+      html += `<label class="opt ${selected}" data-key="${step.key}" data-value="${escapeHtml(opt)}" data-type="multi">
+        <input type="checkbox" ${answers[step.key].includes(opt)?'checked':''}/> ${opt}
+      </label>`;
+    });
+    html += '</div>';
+  } else if(step.type === "text"){
+    html += `<textarea id="freeText" maxlength="300" placeholder="Tulis di sini (boleh dikosongkan, maksimal 300 karakter)...">${answers[step.key]||""}</textarea>
+    <div class="char-count" id="charCount">${(answers[step.key]||"").length}/300</div>`;
+  }
+
+  const isLast = currentStep === steps.length - 1;
+  const isAnswered = step.type === 'text' ? true : (step.type === 'multi' ? answers[step.key].length > 0 : !!answers[step.key]);
+  html += `<div class="validation-msg hidden" id="validationMsg">Mohon pilih salah satu jawaban dulu ya.</div>`;
+  html += `<button class="btn" id="nextBtn">${isLast ? "Lihat penjelasan dari kami" : "Lanjut"}</button>`;
+  html += `</div>`;
+
+  area.innerHTML = html;
+
+  if(step.type === 'text'){
+    const textarea = document.getElementById('freeText');
+    const counter = document.getElementById('charCount');
+    textarea.addEventListener('input', ()=>{
+      counter.textContent = `${textarea.value.length}/300`;
+    });
+  }
+
+  area.querySelectorAll('.opt').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      const key = el.dataset.key;
+      const value = el.dataset.value;
+      const type = el.dataset.type;
+      if(type === 'single'){
+        answers[key] = value;
+      } else {
+        const idx = answers[key].indexOf(value);
+        if(idx > -1){ answers[key].splice(idx,1); } else { answers[key].push(value); }
+      }
+      renderStep();
+    });
+  });
+  document.getElementById('nextBtn').addEventListener('click', ()=>{
+    if(step.type === 'text'){
+      answers.pertanyaanBebas = document.getElementById('freeText').value.slice(0,300);
+    } else {
+      const answered = step.type === 'multi' ? answers[step.key].length > 0 : !!answers[step.key];
+      if(!answered){
+        document.getElementById('validationMsg').classList.remove('hidden');
+        return;
+      }
+    }
+    if(isLast){
+      submitConsultation();
+    } else {
+      currentStep++;
+      renderStep();
+    }
+  });
+}
+
+function escapeHtml(str){
+  return str.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// -----------------------------------------------------------------
+// RULE ENGINE — menentukan treatment secara deterministik (BUKAN AI).
+// AI di backend hanya menjelaskan hasil dari sini, tidak memilih sendiri.
+// Ini sengaja dipisah dari AI supaya rekomendasi selalu konsisten dan
+// selalu salah satu dari 4 treatment yang benar-benar ada.
+// -----------------------------------------------------------------
+const TREATMENTS = {
+  prp_basic: { name: "Qeza PRP Hair Therapy + PDT", normalPrice: "Rp 795.000", promoPrice: "Rp 669.000" },
+  serum_basic: { name: "Qeza Hair Booster Mesotherapy + PDT", normalPrice: "Rp 775.000", promoPrice: "Rp 619.000" },
+  prp_signature: { name: "Qeza Signature Hair Reborn", normalPrice: "Rp 950.000", promoPrice: "Rp 924.000" },
+  serum_signature: { name: "Qeza Signature Root Rescue", normalPrice: "Rp 925.000", promoPrice: "Rp 889.000" }
+};
+
+function pickTreatment(a){
+  // Sumbu 1: PRP vs Serum, berdasarkan kondisi rambut (indikasi biologis)
+  // dan preferensi kenyamanan sebagai fallback kalau kondisi tidak yakin.
+  let axisBio; // 'prp' | 'serum'
+  let bioConfident = true;
+
+  if(a.kondisi === "Benar-benar tidak ada rambut/rambut halus sama sekali di area itu"){
+    axisBio = "prp";
+  } else if(a.kondisi === "Ada rambut halus tipis (seperti baby hair) tapi mudah patah/rontok"){
+    axisBio = "serum";
+  } else {
+    // tidak yakin -> pakai preferensi kenyamanan sebagai penentu sementara
+    bioConfident = false;
+    if(a.preferensiMetode === "Tidak masalah dengan pengambilan darah (PRP)"){
+      axisBio = "prp";
+    } else if(a.preferensiMetode === "Lebih nyaman pakai serum topikal, tanpa darah"){
+      axisBio = "serum";
+    } else {
+      axisBio = "serum"; // default paling minim invasif kalau semua tidak yakin
+    }
+  }
+
+  // Sumbu 2: Basic vs Signature, berdasarkan preferensi tingkat treatment
+  let axisTier; // 'basic' | 'signature'
+  if(a.preferensiTingkat === "Yang lebih lengkap, sekalian relaksasi"){
+    axisTier = "signature";
+  } else {
+    axisTier = "basic"; // default basic kalau ringkas atau belum tahu
+  }
+
+  const key = `${axisBio}_${axisTier}`;
+  return {
+    treatment: TREATMENTS[key],
+    axisBio,
+    axisTier,
+    bioConfident
+  };
+}
+
+let lastRecommendation = null;
+
+async function submitConsultation(){
+  document.getElementById('formArea').classList.add('hidden');
+  document.getElementById('loadingArea').classList.remove('hidden');
+
+  const recommendation = pickTreatment(answers);
+  lastRecommendation = recommendation;
+
+  try{
+    // Panggil backend sendiri (Vercel serverless function), BUKAN Anthropic langsung.
+    // API key tersimpan aman di server, tidak pernah terkirim ke browser.
+    // Treatment sudah ditentukan di sini (rule engine), backend/AI hanya menjelaskan.
+    const response = await fetch('/api/consult', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        ...answers,
+        recommendedTreatment: recommendation.treatment.name,
+        recommendedPrice: recommendation.treatment.promoPrice,
+        recommendedNormalPrice: recommendation.treatment.normalPrice,
+        bioConfident: recommendation.bioConfident
+      })
+    });
+
+    if(!response.ok){
+      throw new Error('Request failed');
+    }
+
+    const data = await response.json();
+    showResult(data.result || 'Maaf, terjadi kendala. Silakan hubungi CS kami langsung ya.');
+  } catch(err){
+    showResult("Maaf, terjadi kendala teknis saat menyiapkan penjelasan. Silakan hubungi CS kami langsung untuk konsultasi ya.", true);
+  }
+}
+
+function buildWaMessage(aiResult, isFallback, intent){
+  const rec = lastRecommendation;
+  const lines = [];
+
+  if(intent === "booking"){
+    lines.push(`Halo Qeza, saya ingin booking ${rec ? rec.treatment.name : "treatment"} setelah konsultasi AI.`);
+  } else {
+    lines.push(`Halo Qeza, saya baru selesai konsultasi AI dan ingin tanya-tanya dulu sebelum memutuskan.`);
+  }
+  lines.push("");
+  lines.push("Ringkasan jawaban saya:");
+  lines.push(`- Lama masalah rambut: ${answers.durasi}`);
+  lines.push(`- Keluhan utama: ${answers.keluhanUtama.length ? answers.keluhanUtama.join(", ") : "Tidak ada"}`);
+  lines.push(`- Frekuensi rontok: ${answers.tingkatKerontokan}`);
+  lines.push(`- Kondisi rambut: ${answers.kondisi}`);
+  lines.push(`- Preferensi metode: ${answers.preferensiMetode}`);
+  lines.push(`- Preferensi tingkat treatment: ${answers.preferensiTingkat}`);
+  lines.push(`- Hal yang bikin ragu: ${answers.keraguan.length ? answers.keraguan.join(", ") : "Tidak ada"}`);
+  lines.push(`- Rencana waktu treatment: ${answers.waktu}`);
+  if(answers.pertanyaanBebas){
+    lines.push(`- Pertanyaan tambahan: ${answers.pertanyaanBebas}`);
+  }
+  if(rec){
+    lines.push(`- Estimasi awal dari form: ${rec.treatment.name} (promo ${rec.treatment.promoPrice}, normal ${rec.treatment.normalPrice})`);
+  }
+  lines.push("");
+  if(isFallback){
+    lines.push("(Penjelasan AI belum sempat tampil karena kendala teknis, mohon dibantu CS ya.)");
+  } else {
+    lines.push("Penjelasan dari AI:");
+    lines.push(aiResult);
+  }
+  lines.push("");
+  if(intent === "booking"){
+    lines.push("Saya ingin lanjut booking. Mohon info jadwal yang tersedia ya.");
+  } else {
+    lines.push("Saya masih ingin konsultasi dulu sebelum memutuskan booking.");
+  }
+  return lines.join("\n");
+}
+
+function showResult(text, isFallback){
+  document.getElementById('loadingArea').classList.add('hidden');
+  const resultArea = document.getElementById('resultArea');
+  const paragraphs = text.split(/\n\n+/).map(p => `<p>${p.replace(/\n/g,'<br>')}</p>`).join('');
+
+  function buildLink(intent){
+    let msg = buildWaMessage(text, isFallback, intent);
+    // Jaga-jaga kalau pesan kepanjangan untuk URL wa.me
+    if(msg.length > 1800){
+      const trimmedResult = text.slice(0, 500) + "... (lanjutan ada di layar konsultasi pasien)";
+      msg = buildWaMessage(trimmedResult, isFallback, intent);
+    }
+    return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+  }
+
+  const rec = lastRecommendation;
+
+  resultArea.innerHTML = `
+    <div class="result">
+      <h3>Estimasi treatment untuk kamu</h3>
+      <div class="rec-name">${rec ? rec.treatment.name : ''}</div>
+      ${rec ? `<div class="rec-price"><span class="price-strike">${rec.treatment.normalPrice}</span> <span class="price-promo">${rec.treatment.promoPrice}</span></div>` : ''}
+      ${paragraphs}
+    </div>
+    <a class="wa-btn" id="ctaBooking" href="${buildLink('booking')}" target="_blank" rel="noopener">
+      Booking Treatment Ini
+    </a>
+    <a class="wa-btn wa-btn-secondary" id="ctaKonsultasi" href="${buildLink('konsultasi')}" target="_blank" rel="noopener">
+      Konsultasi Dulu dengan CS
+    </a>
+    ${rec ? `
+    <div class="promo-box" id="promoBox">
+      <b>Promo khusus buat kamu</b>
+      Untuk ${rec.treatment.name}, harga normal ${rec.treatment.normalPrice}, khusus konsultasi hari ini jadi ${rec.treatment.promoPrice}.
+    </div>` : ''}
+  `;
+  resultArea.classList.remove('hidden');
+
+  // Meta Pixel: hitung klik salah satu tombol WA sebagai "Lead"
+  // (niat serius untuk lanjut, baik booking langsung maupun konsultasi dulu).
+  function trackLead(source){
+    if(typeof fbq === 'function'){
+      fbq('track', 'Lead', { content_name: source });
+    }
+  }
+  const bookingBtn = document.getElementById('ctaBooking');
+  const konsultasiBtn = document.getElementById('ctaKonsultasi');
+  if(bookingBtn) bookingBtn.addEventListener('click', () => trackLead('booking'));
+  if(konsultasiBtn) konsultasiBtn.addEventListener('click', () => trackLead('konsultasi'));
+}
+
+renderStep();
+</script>
+
+</body>
+</html>
